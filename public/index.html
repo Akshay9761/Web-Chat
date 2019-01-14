@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chat App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <link href="/style.css" rel="stylesheet" />
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <link href="/dist/emojionearea.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="my-chat">
+    <div id="chat-window">
+      <div id="feedback">
+        <p id="feed"></p>
+      </div>
+      <div id="chat-output-message"></div>
+    </div>
+    <input type="text" id="username" placeholder="enter your name" />
+    <p id="errMsg" style="color: red;display: none;">Please Fill Your Name 😟</p>
+    <input type="text" id="message" placeholder="enter your message" />
+    <button type="button" id="send-message">Send Message</button>
+  </div>
+  <script src="/chat.js"></script>
+  <script src="/dist/emojionearea.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // alert("hello");
+      $("#message").emojioneArea({
+        pickerPosition: "top",
+        tonesStyle: "bullet",
+         events: {
+          keydown: function (editor, event) {
+            socket.emit('typing', username.value);
+            // console.log(editor.html());
+           }
+         }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "chat application",
+  "main": "chatApp.js",
+  "dependencies": {
+    "emojionearea": "^3.4.1",
+    "express": "^4.16.3",
+    "node-emoji": "^1.8.1",
+    "nodemon": "^1.18.4",
+    "npm": "^6.4.1",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC"
+}
